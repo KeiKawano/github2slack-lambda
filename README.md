@@ -2,8 +2,6 @@
 
 The lambda function to send GitHub event message to Slack.
 
-http://qiita.com/ooharabucyou/items/2a3dca643f6b7783d665 (Japanese)
-
 - This Lambda fucntion works with notification by AmazonSNS.
 - It can allow to mention Slack account via GitHub.
 - It can customize message format.
@@ -23,3 +21,5 @@ npm install
 # LICENSE
 
 This software is released under the MIT License, see LICENSE
+
+https://github.com/kawahara/github2slack-lambda

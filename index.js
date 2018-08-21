@@ -52,6 +52,7 @@ exports.handler = function (event, context) {
       var pull_request = msg.pull_request;
       if (msg.action == 'opended' || msg.action == 'closed') {
           text += 'Pull Request ' + msg.action + "\n";
+          text += convertName(pull_request.body) + "\n";
           text += pull_request.title + "\n";
           text += pull_request.body + "\n";
           text += pull_request.html_url;
@@ -68,7 +69,7 @@ exports.handler = function (event, context) {
     url: config.slack_web_hook_url,
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    json: {text: text, link_names: 1}
+    json: {text: text, link_names: true}
   }, function () {
     context.done();
   });
