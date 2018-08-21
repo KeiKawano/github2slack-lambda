@@ -50,11 +50,10 @@ exports.handler = function (event, context) {
       break;
     case 'pull_request':
       var pull_request = msg.pull_request;
-      if (msg.action == 'opended' || msg.action == 'closed') {
+      if (msg.action == 'opened' || msg.action == 'closed') {
           text += 'Pull Request ' + msg.action + "\n";
-          text += convertName(pull_request.body) + "\n";
           text += pull_request.title + "\n";
-          text += pull_request.body + "\n";
+          text += convertName(pull_request.body) + "\n";          
           text += pull_request.html_url;
       }
       break;
